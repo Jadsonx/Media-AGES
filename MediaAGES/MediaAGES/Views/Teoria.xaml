@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaAGES.Views.Teoria" 
+             xmlns:local="clr-namespace:MediaAGES"
+             Title="MÉDIA TEÓRICA">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Observacoes" Text="Observações" Clicked="Observacoes_Clicked" >
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                      WinPhone="Assets/ic_launcher.png"
+                      Android="ic_launcher.png" />
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Margin="10,20,10,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90" />
+                    <RowDefinition Height="90" />
+                    <RowDefinition Height="90" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0">
+                    <Label x:Name="Nota50" Text="Avaliação 50%" TextColor="Black"/>
+                    <Entry x:Name="BoxNota50" Keyboard="Numeric" Placeholder="Ex.: 6,35" TextChanged="BoxNota50_TextChanged" WidthRequest="100"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+                    <Label Text="Avaliação 100%" TextColor="Black" />
+                    <Entry x:Name="BoxNota100" TextChanged="BoxNota100_TextChanged" Placeholder="Ex.: 7,50" Keyboard="Numeric" WidthRequest="100"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column="0">
+                    <Label Text="Fichamento" TextColor="Black"/>
+                    <Entry x:Name="BoxNotaFichamento" TextChanged="BoxNotaFichamento_TextChanged" Placeholder="Ex.: 10" Keyboard="Numeric" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical"  Grid.Row="1" Grid.Column="1">
+                    <Label Text="Portifolio" TextColor="Black"/>
+                    <Entry x:Name="BoxNotaPortifolio" TextChanged="BoxNotaPortifolio_TextChanged" Placeholder="Ex.: 7,00" Keyboard="Numeric"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical"  Grid.Row="2" Grid.Column="0">
+                    <Label Text="Produção Única" TextColor="Black"/>
+                    <Entry x:Name="BoxNotaPU" Placeholder="Ex.: 1,75" TextChanged="BoxNotaPU_TextChanged" Keyboard="Numeric" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical"  Grid.Row="2" Grid.Column="1">
+                    <Button Text="CALCULAR" 
+                        BackgroundColor="#2196F3"
+                        TextColor="White"
+                        HeightRequest="60" 
+                        WidthRequest="150" 
+                        Clicked="Button_Clicked" />
+                </StackLayout>
+                <local:AdMobView x:Name="adMobView" 
+                         VerticalOptions="EndAndExpand"/>
+            </Grid>
+          
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

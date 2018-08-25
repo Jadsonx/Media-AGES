@@ -1,14 +1,117 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"   
+             xmlns:Page="clr-namespace:MediaAGES.Views"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="MediaAGES.MainPage"
              xmlns:local="clr-namespace:MediaAGES"
-             x:Class="MediaAGES.MainPage">
+             Title="MÉDIA AGES"
+             BarBackgroundColor="#2196F3"
+             BarTextColor="White"            
+             android:TabbedPage.ToolbarPlacement="Bottom"
+             android:TabbedPage.BarItemColor="#66FFFFFF"
+             android:TabbedPage.BarSelectedItemColor="White">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-    	<Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <ContentPage Title="Menu" Icon="ic_Menu.png" >
+        <ContentPage.ToolbarItems>
+            <ToolbarItem x:Name="Compartilhar" Text="Compartilhar" Clicked="Compartilhar_Clicked" >
+                <ToolbarItem.Icon>
+                    <OnPlatform x:TypeArguments="FileImageSource"
+                      WinPhone="Assets/ic_share.png"
+                      Android="ic_share.png" />
+                </ToolbarItem.Icon>
+            </ToolbarItem>
+        </ContentPage.ToolbarItems>
+        <ContentPage.Content>
 
-</ContentPage>
+            <StackLayout Orientation="Vertical" Margin="5,15" Spacing="15" HorizontalOptions="Center">
+
+                <Button x:Name="CalcularMediaTeorica" 
+                    Text="Calcular Média Teórica" 
+                    BackgroundColor="#2196F3" 
+                    FontSize="20"                      
+                    WidthRequest="320" 
+                    HeightRequest="50" 
+                    TextColor="White" 
+                    Clicked="CalcularMediaTeorica_Clicked">
+                </Button>
+
+                <Button x:Name="CalcularMediaPratica"                    
+                    Text="Calcular Média Prática" 
+                    BackgroundColor="#2196F3" 
+                    FontSize="20"  
+                    IsVisible="True"
+                    WidthRequest="320" 
+                    HeightRequest="55" 
+                    TextColor="White" 
+                    Clicked="CalcularMediaPratica_Clicked">
+                </Button>
+                
+
+                    <local:AdMobView x:Name="adMobView" 
+                         VerticalOptions="EndAndExpand"/>
+               
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="Sobre" Icon="ic_Sobre.png" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout BackgroundColor="#2196F3" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView Padding="0,35,0,30" VerticalOptions="FillAndExpand">
+                        <Image Source="about.png" VerticalOptions="Center" WidthRequest="100" HeightRequest="100"/>
+                    </ContentView>
+                </StackLayout>
+            </StackLayout>
+            <ScrollView Grid.Row="1">
+                <StackLayout Orientation="Vertical" Padding="16,30,16,40" Spacing="3">
+                    <Label FontSize="22">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="MédiaAGES" FontAttributes="Bold" FontSize="22" />
+                                    <Span Text=" " />
+                                    <Span Text="1.6" ForegroundColor="Gray" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Aplicativo desenvolvido como parte do projeto de Monografia do aluno Jadson Santos, desenvolvido e apresentado no Centro Universitário AGES - (UniAGES)." />
+                                    <Span Text=" - Desenvolvido por " />
+                                    <Span Text="Jadson Santos" FontAttributes="Bold" />
+                                    <Span Text="." />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Desenvolvido pelo XAMARIN" />
+                                    <Span Text=" " />
+                                    <Span Text="iOS, Android, e Windows" FontAttributes="Bold" />
+                                    <Span Text=" " />
+                                    <Span Text=" " />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="Entre em contato e solicite um orçamento sem compromisso!" HorizontalTextAlignment="Center" FontAttributes="Bold"></Label>
+                    <Button x:Name="FeedBack" Margin="0,10,0,0" Text="Contato" Clicked="FeedBack_Clicked" BackgroundColor="#2196F3" TextColor="White" />
+                    <Button x:Name="Pesquisa" Margin="0,10,0,0" Text="Nossas novidades!" Clicked="Pesquisa_Clicked" BackgroundColor="#2196F3" TextColor="White" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage>
+
+</TabbedPage>

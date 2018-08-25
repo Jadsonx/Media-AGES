@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaAGES.Views.Pratica" 
+             xmlns:local="clr-namespace:MediaAGES"
+             Title="MÉDIA PRÁTICA">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Observacoes" Text="Observações" Clicked="Observacoes_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                      WinPhone="Assets/ic_launcher.png"
+                      Android="ic_launcher.png" />
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Margin="10,20,10,200">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90" />
+                    <RowDefinition Height="90" />
+                    <RowDefinition Height="90" />
+                    <RowDefinition Height="90" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0">
+                    <Label Text="Peso da Teórica" TextColor="Black"/>
+                    <Picker x:Name="PickerTeorica" HorizontalOptions="FillAndExpand">
+                        <Picker.Items>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                            <x:String>6</x:String>
+                            <x:String>7</x:String>
+                            <x:String>8</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+                    <Label Text="Peso da Prática" TextColor="Black"/>
+                    <Picker x:Name="PickerPratica" HorizontalOptions="FillAndExpand">
+                        <Picker.Items>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                            <x:String>6</x:String>
+                            <x:String>8</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column="0">
+                    <Label Text="Avaliação 50%" TextColor="Black"/>
+                    <Entry x:Name="BoxNota50" TextChanged="BoxNota50_TextChanged" Placeholder="Ex.: 8,50" Keyboard="Numeric"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column="1">
+                    <Label Text="Avaliação 100%" TextColor="Black" />
+                    <Entry x:Name="BoxNota100" TextChanged="BoxNota100_TextChanged" Placeholder="Ex.: 5,75" Keyboard="Numeric" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="0">
+                    <Label Text="Fichamento" TextColor="Black"/>
+                    <Entry x:Name="BoxNotaFichamento" TextChanged="BoxNotaFichamento_TextChanged" Placeholder="Ex.: 10" Keyboard="Numeric" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical"  Grid.Row="2" Grid.Column="1">
+                    <Label Text="Portifolio" TextColor="Black"/>
+                    <Entry x:Name="BoxNotaPortifolio" TextChanged="BoxNotaPortifolio_TextChanged" Placeholder="Ex.: 6,00" Keyboard="Numeric" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="3" Grid.Column="0">
+                    <Label Text="Produção Única" TextColor="Black"/>
+                    <Entry x:Name="BoxNotaPU" TextChanged="BoxNotaPU_TextChanged" Placeholder="Ex.: 2,00" Keyboard="Numeric" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="3" Grid.Column="1">
+                    <Label Text="Prova Prática" TextColor="Black"/>
+                    <Entry x:Name="BoxNotaPratica" TextChanged="BoxNotaPratica_TextChanged" Placeholder="Ex.: 8,00" Keyboard="Numeric" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="4" Grid.Column="1">
+                    <Button Text="CALCULAR" 
+                         BackgroundColor="#2196F3"
+                         TextColor="White"
+                         HeightRequest="60" 
+                         WidthRequest="150"
+                         Clicked="Button_Clicked">
+                    </Button>
+                </StackLayout>
+                <local:AdMobView x:Name="adMobView" 
+                         VerticalOptions="EndAndExpand"/>
+            </Grid>
+           
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
