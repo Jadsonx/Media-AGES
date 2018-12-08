@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MediaAGES.Views.Pratica" 
-             xmlns:local="clr-namespace:MediaAGES"
+             xmlns:local="clr-namespace:MediaAGES"            
              Title="MÉDIA PRÁTICA">
 
     <ContentPage.ToolbarItems>
@@ -14,9 +14,10 @@
             </ToolbarItem.Icon>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-    <ContentPage.Content>
+    
+    <StackLayout>
         <ScrollView>
-            <Grid Margin="10,20,10,200">
+            <Grid Margin="10,20,10,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="90" />
                     <RowDefinition Height="90" />
@@ -93,15 +94,17 @@
                     <Button Text="CALCULAR" 
                          BackgroundColor="#2196F3"
                          TextColor="White"
+                         BorderRadius="10"
                          HeightRequest="60" 
                          WidthRequest="150"
                          Clicked="Button_Clicked">
                     </Button>
                 </StackLayout>
-                <local:AdMobView x:Name="adMobView" 
-                         VerticalOptions="EndAndExpand"/>
             </Grid>
-           
         </ScrollView>
-    </ContentPage.Content>
+        <local:AdMobView x:Name="adMobView" 
+                         WidthRequest="320"
+                         HeightRequest="50"
+                         VerticalOptions="EndAndExpand"/>
+    </StackLayout>
 </ContentPage>

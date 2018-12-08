@@ -206,7 +206,7 @@ namespace MediaAGES.Views
                 MediaFinalTeorica = ((notaAluno100 * 0.8) + (portifolio * 0.1)) + pu / 2;
                 //Nota Teorica!
                 MediaFinalTeorica = MediaFinalTeorica * (pesoTeorica / 10);
-
+                //Recebendo o resultado em uma variavel
                 MediaFinalPratica = Notapratica * (pesoPratica / 10);
                 //Nota Pratica e media final recebendo a soma de tudo!
                 mediaFinal = MediaFinalTeorica + MediaFinalPratica;
@@ -218,11 +218,10 @@ namespace MediaAGES.Views
                 MediaFinalTeorica = ((NotaAluno50 + notaAluno100) / 2 * 0.8) + (portifolio * 0.1) + pu / 2;
                 // Nota Teorica
                 MediaFinalTeorica = MediaFinalTeorica * (pesoTeorica / 10);
-
+                //Recebendo o resultado em uma variavel
                 MediaFinalPratica = Notapratica * (pesoPratica / 10);
                 //Nota Pratica e media final recebendo a soma de tudo!
                 mediaFinal = MediaFinalTeorica + MediaFinalPratica;
-
             }
 
             if (mediaFinal > 10)
@@ -626,6 +625,5 @@ namespace MediaAGES.Views
                 string.IsNullOrEmpty(entry.Text);
             }
         }
-
     }
 }

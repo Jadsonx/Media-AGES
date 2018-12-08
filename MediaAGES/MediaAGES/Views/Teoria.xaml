@@ -14,7 +14,8 @@
             </ToolbarItem.Icon>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-    <ContentPage.Content>
+    
+    <StackLayout>
         <ScrollView>
             <Grid Margin="10,20,10,10">
                 <Grid.RowDefinitions>
@@ -59,13 +60,17 @@
                         BackgroundColor="#2196F3"
                         TextColor="White"
                         HeightRequest="60" 
+                        BorderRadius="10"
                         WidthRequest="150" 
                         Clicked="Button_Clicked" />
                 </StackLayout>
-                <local:AdMobView x:Name="adMobView" 
-                         VerticalOptions="EndAndExpand"/>
             </Grid>
-          
         </ScrollView>
-    </ContentPage.Content>
+
+        <local:AdMobView x:Name="MediaAGESTeorica" 
+                         WidthRequest="320"
+                         HeightRequest="50"
+                         VerticalOptions="EndAndExpand"/>
+    </StackLayout>
+   
 </ContentPage>

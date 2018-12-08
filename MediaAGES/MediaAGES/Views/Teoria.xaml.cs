@@ -20,7 +20,7 @@ namespace MediaAGES.Views
         public Teoria()
         {
             InitializeComponent();
-            adMobView.AdUnitId = "ca-app-pub-3659475632008000/7960166481";
+            MediaAGESTeorica.AdUnitId = "ca-app-pub-3659475632008000/7960166481";
         }
 
         private void Observacoes_Clicked(object sender, EventArgs e)

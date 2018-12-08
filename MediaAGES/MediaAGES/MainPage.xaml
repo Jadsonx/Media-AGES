@@ -17,21 +17,21 @@
             <ToolbarItem x:Name="Compartilhar" Text="Compartilhar" Clicked="Compartilhar_Clicked" >
                 <ToolbarItem.Icon>
                     <OnPlatform x:TypeArguments="FileImageSource"
-                      WinPhone="Assets/ic_share.png"
-                      Android="ic_share.png" />
+                      WinPhone="Assets/ic_Share.png"
+                      Android="ic_Share.png" />
                 </ToolbarItem.Icon>
             </ToolbarItem>
         </ContentPage.ToolbarItems>
-        <ContentPage.Content>
 
+        <StackLayout>
             <StackLayout Orientation="Vertical" Margin="5,15" Spacing="15" HorizontalOptions="Center">
-
                 <Button x:Name="CalcularMediaTeorica" 
                     Text="Calcular Média Teórica" 
                     BackgroundColor="#2196F3" 
                     FontSize="20"                      
                     WidthRequest="320" 
                     HeightRequest="50" 
+                    BorderRadius="10"
                     TextColor="White" 
                     Clicked="CalcularMediaTeorica_Clicked">
                 </Button>
@@ -40,19 +40,21 @@
                     Text="Calcular Média Prática" 
                     BackgroundColor="#2196F3" 
                     FontSize="20"  
+                    BorderRadius="10"
                     IsVisible="True"
                     WidthRequest="320" 
                     HeightRequest="55" 
                     TextColor="White" 
                     Clicked="CalcularMediaPratica_Clicked">
                 </Button>
-                
 
-                    <local:AdMobView x:Name="adMobView" 
-                         VerticalOptions="EndAndExpand"/>
-               
+                <local:AdMobView x:Name="adMobView"
+                             WidthRequest="320"                             
+                             HeightRequest="50"
+                             VerticalOptions="CenterAndExpand"/>
             </StackLayout>
-        </ContentPage.Content>
+        
+        </StackLayout>
     </ContentPage>
 
     <ContentPage Title="Sobre" Icon="ic_Sobre.png" >
@@ -63,7 +65,7 @@
             </Grid.RowDefinitions>
             <StackLayout BackgroundColor="#2196F3" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                    <ContentView Padding="0,35,0,30" VerticalOptions="FillAndExpand">
+                    <ContentView Padding="0,20,0,20" VerticalOptions="FillAndExpand">
                         <Image Source="about.png" VerticalOptions="Center" WidthRequest="100" HeightRequest="100"/>
                     </ContentView>
                 </StackLayout>
@@ -76,7 +78,7 @@
                                 <FormattedString.Spans>
                                     <Span Text="MédiaAGES" FontAttributes="Bold" FontSize="22" />
                                     <Span Text=" " />
-                                    <Span Text="1.6" ForegroundColor="Gray" />
+                                    <Span Text="1.8" ForegroundColor="Gray" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -97,21 +99,44 @@
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
-                                    <Span Text="Desenvolvido pelo XAMARIN" />
+                                    <Span Text="Projeto OpenSource, Disponível no GitHub!" />
                                     <Span Text=" " />
-                                    <Span Text="iOS, Android, e Windows" FontAttributes="Bold" />
+                                    <Span Text="Android, e Windows" FontAttributes="Bold" />
                                     <Span Text=" " />
                                     <Span Text=" " />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label Text="Entre em contato e solicite um orçamento sem compromisso!" HorizontalTextAlignment="Center" FontAttributes="Bold"></Label>
-                    <Button x:Name="FeedBack" Margin="0,10,0,0" Text="Contato" Clicked="FeedBack_Clicked" BackgroundColor="#2196F3" TextColor="White" />
-                    <Button x:Name="Pesquisa" Margin="0,10,0,0" Text="Nossas novidades!" Clicked="Pesquisa_Clicked" BackgroundColor="#2196F3" TextColor="White" />
+                    <Label Text="Dúvidas, Sugestões e FeedBack, entre em contato!" 
+                           HorizontalTextAlignment="Center" 
+                           FontAttributes="Bold"/>
+
+                    <Button x:Name="FeedBack" 
+                            Margin="0,10,0,0" 
+                            Text="FeedBack" 
+                            BorderRadius="10"
+                            Clicked="FeedBack_Clicked" 
+                            BackgroundColor="#2196F3" 
+                            TextColor="White" />
+
+                    <Button x:Name="Pesquisa" 
+                            Margin="0,10,0,0" 
+                            BorderRadius="10"
+                            Text="Nossos Projetos" 
+                            Clicked="Pesquisa_Clicked" 
+                            BackgroundColor="#2196F3" 
+                            TextColor="White" />
+
+                    <Button x:Name="OpenSourceGit" 
+                            Margin="0,10,0,0" 
+                            BorderRadius="10"
+                            Text="Github do Projeto" 
+                            Clicked="Pesquisa_Clicked" 
+                            BackgroundColor="#2196F3" 
+                            TextColor="White" />
                 </StackLayout>
             </ScrollView>
         </Grid>
     </ContentPage>
-
 </TabbedPage>

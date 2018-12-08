@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
@@ -19,7 +18,12 @@ namespace MediaAGES.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-            MobileAds.Initialize(ApplicationContext, "ca-app-pub-3659475632008000~5805348619");
+            //Banner ADS Menu Inicial
+            MobileAds.Initialize(ApplicationContext, "ca-app-pub-3659475632008000/9740724198");
+            //Banner ADS Teorica
+            //MobileAds.Initialize(ApplicationContext, "ca-app-pub-3659475632008000/7960166481");
+            ////Banner ADS Prática
+            //MobileAds.Initialize(ApplicationContext, "ca-app-pub-3659475632008000/3995928793");
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }

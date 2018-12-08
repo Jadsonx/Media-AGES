@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.Gms.Ads;
@@ -17,7 +16,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer(typeof(AdMobView), typeof(AdMobViewRenderer))]
-
 namespace MediaAGES.Droid
 {
     public class AdMobViewRenderer : ViewRenderer<AdMobView, AdView>
@@ -46,7 +44,7 @@ namespace MediaAGES.Droid
         {
             var adView = new AdView(Context)
             {
-                AdSize = AdSize.SmartBanner,
+                AdSize = AdSize.Banner,
                 AdUnitId = Element.AdUnitId
             };
 
