@@ -41,5 +41,10 @@ namespace MediaAGES
                 Environment.NewLine + "https://play.google.com/store/apps/details?id=com.LURASOFT.MediaAGES&hl=pt_BR";
             Device.OpenUri(new Uri("https://api.whatsapp.com/send?text=" + MsgShare));            
         }
+
+        private void OpenSourceGit_Clicked(object sender, EventArgs e)
+        {
+            Device.OpenUri(new Uri("https://github.com/Jadsonx/Media-AGES"));
+        }
     }
 }

@@ -132,7 +132,7 @@
                             Margin="0,10,0,0" 
                             BorderRadius="10"
                             Text="Github do Projeto" 
-                            Clicked="Pesquisa_Clicked" 
+                            Clicked="OpenSourceGit_Clicked" 
                             BackgroundColor="#2196F3" 
                             TextColor="White" />
                 </StackLayout>
